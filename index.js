@@ -28,9 +28,11 @@ function asyncSquare (num) {
     })
 }
 
-app.listen(3000, (err) => {
+
+const { PORT:port=3000 } = process.env
+app.listen(port, (err) => {
   if (err) {
     logger.info('ERROR: The app could not start')
   }
-  logger.info('The app is listening on 3000')
+  logger.info(`The app is listening on port ${port}`)
 })
